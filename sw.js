@@ -1,5 +1,5 @@
-// NPK Radar service worker — shell cache-first, data network-first. Build: 202609181846
-const SHELL = 'npk-shell-202609181846';
+// NPK Radar service worker — shell cache-first, data network-first. Build: 202609182229
+const SHELL = 'npk-shell-202609182229';
 const PRECACHE = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-180.png'];
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(SHELL).then((c) => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
@@ -22,7 +22,7 @@ self.addEventListener('fetch', (e) => {
     }).catch(() => caches.match(e.request).then((hit) => hit || (isNav ? caches.match('./index.html') : undefined))));
     return;
   }
-  // static assets (fonts, d3, icons): cache-first
+  // static assets (fonts and icons): cache-first. D3 is embedded in index.html.
   const cacheable = same || /cdnjs\.cloudflare\.com|fonts\.(googleapis|gstatic)\.com/.test(url.host);
   e.respondWith(caches.match(e.request).then((hit) => hit || fetch(e.request).then((r) => {
     if (r && (r.ok || r.type === 'opaque') && cacheable) { const c = r.clone(); caches.open(SHELL).then((x) => x.put(e.request, c)); }
