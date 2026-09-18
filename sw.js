@@ -1,5 +1,5 @@
-// NPK Radar service worker — shell cache-first, data network-first. Build: 202609181753
-const SHELL = 'npk-shell-202609181753';
+// NPK Radar service worker — shell cache-first, data network-first. Build: 202609181757
+const SHELL = 'npk-shell-202609181757';
 const PRECACHE = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-180.png'];
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(SHELL).then((c) => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
@@ -10,12 +10,20 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET') return;
   const url = new URL(e.request.url);
-  const isData = url.origin === location.origin && url.pathname.endsWith('.json');
-  if (isData) {
-    e.respondWith(fetch(e.request).then((r) => { const c = r.clone(); caches.open(SHELL).then((x) => x.put(e.request, c)); return r; }).catch(() => caches.match(e.request)));
+  const same = url.origin === location.origin;
+  const isNav = e.request.mode === 'navigate' || (same && (url.pathname.endsWith('/') || url.pathname.endsWith('.html')));
+  const isData = same && url.pathname.endsWith('.json');
+  if (isNav || isData) {
+    // NETWORK-FIRST for the page and its data: a fresh open always gets the newest build;
+    // the cache is only the offline fallback.
+    e.respondWith(fetch(url.href, { cache: 'no-store', credentials: 'same-origin' }).then((r) => {
+      if (r && r.ok) { const c = r.clone(); caches.open(SHELL).then((x) => x.put(e.request, c)); }
+      return r;
+    }).catch(() => caches.match(e.request).then((hit) => hit || (isNav ? caches.match('./index.html') : undefined))));
     return;
   }
-  const cacheable = url.origin === location.origin || /cdnjs\.cloudflare\.com|fonts\.(googleapis|gstatic)\.com/.test(url.host);
+  // static assets (fonts, d3, icons): cache-first
+  const cacheable = same || /cdnjs\.cloudflare\.com|fonts\.(googleapis|gstatic)\.com/.test(url.host);
   e.respondWith(caches.match(e.request).then((hit) => hit || fetch(e.request).then((r) => {
     if (r && (r.ok || r.type === 'opaque') && cacheable) { const c = r.clone(); caches.open(SHELL).then((x) => x.put(e.request, c)); }
     return r;
