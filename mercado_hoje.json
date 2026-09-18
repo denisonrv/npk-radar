@@ -1,0 +1,453 @@
+{
+  "as_of": "2026-09-18",
+  "generated_by": "levantamento manual (WebSearch/WebFetch) em 18/09/2026; ver docs/prototipo/mercado_hoje.md",
+  "hormuz": {
+    "status": "fechado (trânsito residual ~9% do normal)",
+    "transits_per_day": 8,
+    "transits_date": "2026-09-13",
+    "baseline_per_day": 85,
+    "fact": "Estreito segue fechado ao tráfego comercial (dia 201). Em 18/09 um petroleiro foi atingido por projétil não identificado dentro do estreito; incêndio controlado, tripulação a salvo (UKMTO). A Guarda Revolucionária reivindicou ataque ao petroleiro Trend (bandeira Togo). Seguro de risco de guerra ~40x o pré-crise; Brent ~US$ 104.",
+    "fact_date": "2026-09-18",
+    "source_url": "https://straits.live/",
+    "source": "straits.live (agrega IMF PortWatch, UKMTO, Lloyd's, Reuters) — atualizado 18/09/2026 12:30Z",
+    "confidence": 7,
+    "verified": true,
+    "notes": "Trânsitos diários: 8 em 13/09 (IMF PortWatch via straits.live). Relatos de imprensa (NBC/Windward) citam 6 em 15/09 e 12 em 16/09, não verificados diretamente. Página do IMF PortWatch (portwatch.imf.org) é ArcGIS e não devolveu dados por fetch simples. Verificação 18/09 direto no FeatureServer ArcGIS do PortWatch (Daily_Chokepoints_Data, portid chokepoint6): n_total em 13/09 = 8 (confere); 07-13/09 = 5, 6, 3, 5, 8, 2, 8 (média 5,3/dia); média diária de 2025 = 85,5 (confere com baseline 85); jan-fev/2026 = 66,9; queda para <10/dia a partir de ~01-03/03/2026 (coerente com 'dia 201' em 18/09).",
+    "portwatch_direct": {"transits_2026_09_13": 8, "avg_7d_to_2026_09_13": 5.3, "avg_2025_per_day": 85.5, "checked": "2026-09-18", "source_url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0"}
+  },
+  "red_sea": {
+    "status": "alto risco / restrito",
+    "fact": "Houthis completaram em 11/09 a tomada do litoral iemenita do Mar Vermelho junto ao Bab el-Mandeb (porto de Mokha) e, em 12/09, da ilha de Mayun/Perim na entrada do estreito. A rota alternativa saudita ao Ormuz ficou 'contida'; o grupo diz que a navegação segue 'segura e ordenada'.",
+    "fact_date": "2026-09-11",
+    "source_url": "https://www.aljazeera.com/news/2026/9/11/houthis-take-control-of-yemens-red-sea-coast-key-shipping-route",
+    "source": "Al Jazeera 11/09/2026; NPR 11-12/09/2026",
+    "confidence": 7,
+    "verified": true
+  },
+  "black_sea": {
+    "status": "operando sob ataque; exportação russa de fertilizantes por Novorossiysk/Taman efetivamente parada",
+    "fact": "Ataque ucraniano a Novorossiysk em 12/08 paralisou os três terminais de grãos; Rússia atacou ao menos 57 cargueiros em jul-ago; exportações de fertilizantes do Mar Negro 'efetivamente paralisadas' após a escalada. Trigo em alta (+15% a/a em agosto).",
+    "fact_date": "2026-08-12",
+    "source_url": "https://www.csis.org/analysis/how-do-latest-black-sea-attacks-affect-global-food-security",
+    "source": "CSIS, 11/09/2026",
+    "confidence": 7,
+    "verified": true,
+    "notes": "Relato de bombardeio a Odesa em 11-12/09 apareceu em resultado de busca (Energy News Beat) mas não foi verificado por fetch — não usado como fato principal."
+  },
+  "prices_cfr_brazil": [
+    {
+      "product": "Ureia granulada",
+      "usd_per_t_low": 480,
+      "usd_per_t_high": 500,
+      "date": "2026-08-28",
+      "source": "Biond Agro via O Presente Rural",
+      "source_url": "https://opresenterural.com.br/ureia-dispara-fosforo-recua-e-produtor-enfrenta-dilema-na-compra-de-fertilizantes/",
+      "confidence": 6,
+      "verified": true,
+      "notes": "Alta de US$ 80-90 em julho (demanda indiana + oferta do Oriente Médio). Itaú BBA (NX1, 09/09) cita queda de 12,5% em agosto na referência para chegada nos portos (R$ 2.456 -> R$ 2.148/t), o que sugere base/forma de cálculo diferente."
+    },
+    {
+      "product": "Ureia granulada (futuro CME CFR Brazil, 1º venc.)",
+      "usd_per_t_low": 472.5,
+      "usd_per_t_high": 472.5,
+      "date": "2026-09-17",
+      "source": "CME Urea (Granular) CFR Brazil futures via Investing.com (cotação atrasada)",
+      "source_url": "https://br.investing.com/indices/urea-granular-cfr-brazil-futures",
+      "confidence": 6,
+      "verified": true,
+      "notes": "É um índice futuro, não preço físico. TradingEconomics (base não confirmada) mostrava 'Urea' US$ 460,25/t em 17/09, +17,9% em 30 dias — indica retomada em setembro após queda em agosto."
+    },
+    {
+      "product": "MAP",
+      "usd_per_t_low": 850,
+      "usd_per_t_high": 870,
+      "date": "2026-08-28",
+      "source": "Biond Agro via O Presente Rural",
+      "source_url": "https://opresenterural.com.br/ureia-dispara-fosforo-recua-e-produtor-enfrenta-dilema-na-compra-de-fertilizantes/",
+      "confidence": 6,
+      "verified": true,
+      "notes": "Em queda no fim de agosto (oferta maior + proximidade do plantio). Coerente com Itaú BBA/NX1 (09/09): R$ 4.350/t no porto no fim de agosto (~US$ 845/t à PTAX de 5,15)."
+    },
+    {
+      "product": "KCl (cloreto de potássio)",
+      "usd_per_t_low": 385,
+      "usd_per_t_high": 400,
+      "date": "2026-08-28",
+      "source": "Biond Agro via O Presente Rural",
+      "source_url": "https://opresenterural.com.br/ureia-dispara-fosforo-recua-e-produtor-enfrenta-dilema-na-compra-de-fertilizantes/",
+      "confidence": 6,
+      "verified": true,
+      "notes": "Estável; ~95% do potássio da soja 26/27 já comprado."
+    },
+    {
+      "product": "KCl (cloreto de potássio)",
+      "usd_per_t_low": 400,
+      "usd_per_t_high": 405,
+      "date": "2026-08-29",
+      "source": "Itaú BBA via Agrolink",
+      "source_url": "https://www.agrolink.com.br/noticias/relacao-de-troca-2026--quantas-sacas-de-soja-pagam-1-tonelada-de-ureia_518336.html",
+      "confidence": 6,
+      "verified": true,
+      "notes": "Referência de agosto; mesma faixa citada por Conecta Agro (10/08, CNA/Campo Futuro)."
+    }
+  ],
+  "prices_cfr_brazil_missing": ["SSP", "TSP", "sulfato de amônio (US$)"],
+  "trade_ratio": [
+    {
+      "product": "Fertilizantes (cesta, produto não especificado)",
+      "sacas_per_t": 25.1,
+      "sacas_per_t_year_ago": 20.57,
+      "region": "Mato Grosso",
+      "date": "2026-09-16",
+      "source": "MacroSector via BRA1",
+      "source_url": "https://www.bra1.com.br/economia/id-693370/produtores_de_graos_percam_poder_de_compra_em_2026__soja_resiste__mas_fertilizantes_encarecem",
+      "confidence": 5,
+      "verified": true,
+      "notes": "Consultoria não detalha qual fertilizante/índice; setembro/2026 vs setembro/2025."
+    },
+    {
+      "product": "MAP (pico de março/2026)",
+      "sacas_per_t": 39,
+      "region": "Brasil (Itaú BBA)",
+      "date": "2026-03-31",
+      "source": "Itaú BBA via NX1 (09/09/2026)",
+      "source_url": "https://nx1.com.br/2026/09/09/soja-mais-cara-devolve-folego-a-compra-de-fertilizantes/",
+      "confidence": 6,
+      "verified": true,
+      "notes": "Ano anterior: 25 sc/t. Em milho: 72 sc/t no pico vs 49."
+    },
+    {
+      "product": "Ureia (pico de março/2026)",
+      "sacas_per_t": 32,
+      "region": "Brasil (Itaú BBA)",
+      "date": "2026-03-31",
+      "source": "Itaú BBA via NX1 (09/09/2026)",
+      "source_url": "https://nx1.com.br/2026/09/09/soja-mais-cara-devolve-folego-a-compra-de-fertilizantes/",
+      "confidence": 6,
+      "verified": true,
+      "notes": "Relação melhorou em agosto (ureia -12,5%), valor de setembro não publicado."
+    },
+    {
+      "product": "MAP",
+      "sacas_per_t": 35,
+      "region": "Brasil (Scot Consultoria)",
+      "date": "2026-02-23",
+      "source": "Scot Consultoria — Carta Insumos 26/02/2026",
+      "source_url": "https://www.scotconsultoria.com.br/noticias/cartas/60168/carta-insumos-relacao-de-troca-soja-x-fertilizantes.htm",
+      "confidence": 7,
+      "verified": true,
+      "notes": "Média 2025: 31,8 sc/t. MAP R$ 4.624,20/t. Dado defasado (fev/2026); Scot não publicou carta mais recente de acesso livre encontrada."
+    },
+    {
+      "product": "KCl",
+      "sacas_per_t": 23,
+      "region": "Brasil (Scot Consultoria)",
+      "date": "2026-02-23",
+      "source": "Scot Consultoria — Carta Insumos 26/02/2026",
+      "source_url": "https://www.scotconsultoria.com.br/noticias/cartas/60168/carta-insumos-relacao-de-troca-soja-x-fertilizantes.htm",
+      "confidence": 7,
+      "verified": true,
+      "notes": "Média 2025: 20,4 sc/t. KCl R$ 3.042,79/t."
+    },
+    {
+      "product": "SSP",
+      "sacas_per_t": 18,
+      "region": "Brasil (Scot Consultoria)",
+      "date": "2026-02-23",
+      "source": "Scot Consultoria — Carta Insumos 26/02/2026",
+      "source_url": "https://www.scotconsultoria.com.br/noticias/cartas/60168/carta-insumos-relacao-de-troca-soja-x-fertilizantes.htm",
+      "confidence": 7,
+      "verified": true,
+      "notes": "Média 2025: 16,1 sc/t. SSP R$ 2.381,07/t."
+    }
+  ],
+  "trade_ratio_missing": ["IMEA (boletim semanal MT, set/2026) — não localizado em acesso livre", "CONAB painel de relação de troca — não localizado"],
+  "ipcf": {
+    "value": 1.26,
+    "month": "2026-08",
+    "previous_value": 1.35,
+    "previous_month": "2026-07",
+    "change_pct": -7,
+    "source": "Mosaic Fertilizantes (IPCF) via Piranot, 10/09/2026",
+    "source_url": "https://www.piranot.com.br/2026/09/10/noticias/economia/ipcf-cai-7-agosto-melhora-poder-compra-fertilizantes/",
+    "mosaic_url": "https://mosaicco.com.br/Article/%C3%8Dndice-de-Poder-de-Compra-de-Fertilizantes-(IPCF)",
+    "confidence": 8,
+    "verified": true,
+    "notes": "Base 2017 = 1,0; >1 = fertilizante menos acessível. Queda por commodities +6% (cana +8%, soja +5%, milho +4%) e fertilizantes em baixa."
+  },
+  "soy": {
+    "cepea_brl_sc": 154.95,
+    "cepea_date": "2026-09-17",
+    "cepea_indicator": "Indicador Soja CEPEA/ESALQ Paraná (R$/sc 60 kg)",
+    "cepea_source_url": "https://www.noticiasagricolas.com.br/cotacoes/soja/indicador-cepea-esalq-soja-parana",
+    "cepea_history": [
+      {"date": "2026-09-11", "brl_sc": 152.82},
+      {"date": "2026-09-14", "brl_sc": 152.90},
+      {"date": "2026-09-15", "brl_sc": 153.59},
+      {"date": "2026-09-16", "brl_sc": 155.33},
+      {"date": "2026-09-17", "brl_sc": 154.95}
+    ],
+    "spot_regional": [
+      {"place": "Sorriso-MT", "brl_sc": 136.50, "date": "2026-09-17", "source_url": "https://www.noticiasagricolas.com.br/cotacoes/soja"},
+      {"place": "Rondonópolis-MT", "brl_sc": 149.90, "date": "2026-09-17", "source_url": "https://www.noticiasagricolas.com.br/cotacoes/soja"},
+      {"place": "Rio Verde-GO", "brl_sc": 140.00, "date": "2026-09-17", "source_url": "https://www.noticiasagricolas.com.br/cotacoes/soja"},
+      {"place": "Paranaguá-PR", "brl_sc": 162.00, "date": "2026-09-17", "source_url": "https://www.noticiasagricolas.com.br/cotacoes/soja"}
+    ],
+    "forward": [
+      {
+        "place": "Sorriso-MT (FOB)",
+        "brl_sc": 136.65,
+        "brl_sc_low": 129.10,
+        "brl_sc_high": 136.65,
+        "delivery": "entrega futura — safra 2026/27 (mês não informado na página)",
+        "date": "2026-09-17",
+        "source": "Grão Direto — ofertas de compra",
+        "source_url": "https://www.graodireto.com.br/ofertas/soja/mt/sorriso/",
+        "confidence": 5,
+        "verified": true
+      },
+      {
+        "place": "Lucas do Rio Verde-MT (FOB/CIF)",
+        "brl_sc": 142.20,
+        "brl_sc_low": 138.55,
+        "brl_sc_high": 142.20,
+        "delivery": "entrega futura — safra 2026/27 (mês não informado na página)",
+        "date": "2026-09-17",
+        "source": "Grão Direto — ofertas de compra",
+        "source_url": "https://www.graodireto.com.br/ofertas/soja/mt/sorriso/",
+        "confidence": 5,
+        "verified": true
+      },
+      {
+        "place": "Oeste do PR — Corbélia/Cafelândia/Laranjeiras do Sul (FOB), página Cascavel",
+        "brl_sc": 144.45,
+        "brl_sc_low": 142.65,
+        "brl_sc_high": 144.75,
+        "delivery": "entrega futura — safra 2026/27 (mês não informado na página)",
+        "date": "2026-09-18",
+        "source": "Grão Direto — ofertas de compra (data de acesso; página sem data)",
+        "source_url": "https://www.graodireto.com.br/ofertas/soja/pr/cascavel/",
+        "confidence": 4,
+        "verified": true
+      },
+      {
+        "place": "Barra do Garças-MT (FOB), página Rio Verde-GO",
+        "brl_sc": 137.55,
+        "brl_sc_low": 136.75,
+        "brl_sc_high": 137.55,
+        "delivery": "entrega futura — safra 2026/27 (mês não informado; não há oferta futura em Rio Verde na página)",
+        "date": "2026-09-17",
+        "source": "Grão Direto — ofertas de compra",
+        "source_url": "https://www.graodireto.com.br/ofertas/soja/go/rio-verde/",
+        "confidence": 4,
+        "verified": true
+      },
+      {
+        "place": "Mato Grosso — média negociada safra 2026/27 (IMEA)",
+        "brl_sc": 121.18,
+        "delivery": "safra 2026/27 (média acumulada das vendas antecipadas até agosto/2026; 39,12% vendido)",
+        "date": "2026-08-31",
+        "source": "IMEA via Sou Agro, 11/09/2026",
+        "source_url": "https://souagro.net/noticia/2026/09/preco-reage-e-produtor-acelera-venda-de-soja-algodao-e-milho/",
+        "confidence": 7,
+        "verified": true,
+        "notes": "+R$ 10,01/sc vs julho. Itaú BBA/NX1 (09/09): preços 26/27 em MT subiram ~10% em 30 dias após ficarem abaixo de R$ 100/sc no início da comercialização."
+      },
+      {
+        "place": "B3 (SFI) mar/2027 convertido — base Paranaguá",
+        "brl_sc": 152.97,
+        "usd_sc": 29.69,
+        "ptax_sell": 5.1521,
+        "ptax_date": "2026-09-17",
+        "delivery": "março/2027 (contrato futuro financeiro; sem basis regional)",
+        "date": "2026-09-17",
+        "source": "Notícias Agrícolas (cotação B3 em US$/sc) x PTAX venda BCB (data.json) — conversão própria",
+        "source_url": "https://www.noticiasagricolas.com.br/cotacoes/soja",
+        "confidence": 5,
+        "verified": true,
+        "notes": "Conversão: 29,69 US$/sc x 5,1521 = R$ 152,97/sc. jan/2027: 29,50 x 5,1521 = R$ 151,99. Para chegar ao preço no interior, subtrair basis (frete + margem): Sorriso costuma ficar R$ 20-30/sc abaixo de Paranaguá (spot 17/09: 136,50 vs 162,00)."
+      }
+    ]
+  },
+  "barter_typical": [
+    {
+      "product": "Ureia",
+      "sacas_per_t_low": 35,
+      "sacas_per_t_high": 40,
+      "sacas_per_t_2025_low": 28,
+      "sacas_per_t_2025_high": 32,
+      "days_typical": null,
+      "date": "2026-08-29",
+      "source": "Itaú BBA via Agrolink",
+      "source_url": "https://www.agrolink.com.br/noticias/relacao-de-troca-2026--quantas-sacas-de-soja-pagam-1-tonelada-de-ureia_518336.html",
+      "confidence": 6,
+      "verified": true
+    },
+    {
+      "product": "MAP",
+      "sacas_per_t_low": 30,
+      "sacas_per_t_high": 35,
+      "sacas_per_t_2025_low": 25,
+      "sacas_per_t_2025_high": 30,
+      "days_typical": null,
+      "date": "2026-08-29",
+      "source": "Itaú BBA via Agrolink",
+      "source_url": "https://www.agrolink.com.br/noticias/relacao-de-troca-2026--quantas-sacas-de-soja-pagam-1-tonelada-de-ureia_518336.html",
+      "confidence": 6,
+      "verified": true
+    },
+    {
+      "product": "KCl",
+      "sacas_per_t_low": 20,
+      "sacas_per_t_high": 25,
+      "sacas_per_t_2025_low": 18,
+      "sacas_per_t_2025_high": 22,
+      "days_typical": null,
+      "date": "2026-08-29",
+      "source": "Itaú BBA via Agrolink",
+      "source_url": "https://www.agrolink.com.br/noticias/relacao-de-troca-2026--quantas-sacas-de-soja-pagam-1-tonelada-de-ureia_518336.html",
+      "confidence": 6,
+      "verified": true
+    }
+  ],
+  "barter_notes": "Prazo típico (janela de compra -> entrega do grão) NÃO foi encontrado em fonte pública datada; guias (Aegro, Bayer, BASF) só dizem 'paga na colheita'. Formulados NPK: sem faixa publicada. ~90% da adubação da soja 26/27 já comprada (Itaú BBA/NX1, 09/09) e ~95% do potássio (Biond Agro, 28/08).",
+  "imports_2026": {
+    "period": "jan-ago/2026",
+    "unit": "milhões de t",
+    "total_mt": 25.32,
+    "urea_mt": 2.82,
+    "map_mt": null,
+    "kcl_mt": 9.76,
+    "kcl_mt_2025_same_period": 10.12,
+    "yoy_total_pct": -13.9,
+    "yoy_urea_pct": null,
+    "yoy_map_pct": null,
+    "yoy_kcl_pct": -3.6,
+    "aug_2026_total_mt": 2.96,
+    "aug_2026_yoy_pct": -43.3,
+    "avg_import_price_usd_t": 393.2,
+    "avg_import_price_yoy_pct": 16.9,
+    "value_jan_jul_usd_bn": 8.809,
+    "source": "Comex Stat via FarmNews (11/09 e 15/09/2026); Secex via Economic News Brasil (19/08)",
+    "source_url": "https://farmnews.com.br/mercado/importacao-de-fertilizante-pelo-brasil-cai-forte-em-agosto-de-2026/",
+    "source_url_urea": "https://farmnews.com.br/mercado/importacao-de-ureia-pelo-brasil-volta-a-cair-e-segue-descolado-dos-anos-anteriores/",
+    "source_url_kcl": "https://farmnews.com.br/mercado/importacao-de-cloreto-de-potassio-pelo-brasil-volta-a-cair-forte-em-agosto/",
+    "date": "2026-09-15",
+    "confidence": 7,
+    "verified": true,
+    "notes": "MAP jan-ago não publicado; referências parciais: jan-abr -18,3% (AF News) e 1º semestre -24% (StoneX/AgFeed). Ureia 1º semestre -32%. yoy_kcl_pct calculado a partir de 9,76 vs 10,12 Mt. O data.json (Comex Stat por NCM) pode fechar a lacuna de MAP automaticamente.",
+    "deliveries_forecast_2026": {
+      "mt": 45.1,
+      "yoy_pct": -8.1,
+      "base_2025_mt": 49.1,
+      "source": "RaboResearch (revisão de julho; abril era 47,0) via AF News, 03/09/2026",
+      "source_url": "https://afnews.com.br/demanda-por-fertilizantes-no-brasil-pode-cair-8-em-2026-com-credito-apertado-e-precos-elevados/",
+      "confidence": 7
+    }
+  },
+  "context": [
+    {
+      "date": "2026-09-18",
+      "fact": "Ormuz segue fechado ao tráfego comercial (dia 201): petroleiro atingido por projétil no estreito, incêndio controlado (UKMTO). Trânsitos ~8/dia contra 85 antes da guerra; seguro de guerra ~40x.",
+      "source_url": "https://straits.live/"
+    },
+    {
+      "date": "2026-09-11",
+      "fact": "Houthis assumem o litoral do Iêmen no Bab el-Mandeb (Mokha e ilha de Mayun em 12/09): a saída alternativa saudita pelo Mar Vermelho fica sob controle do grupo; frete e seguro na rota Suez em alerta.",
+      "source_url": "https://www.aljazeera.com/news/2026/9/11/houthis-take-control-of-yemens-red-sea-coast-key-shipping-route"
+    },
+    {
+      "date": "2026-09-11",
+      "fact": "Brasil importou 2,96 Mt de fertilizantes em agosto (-43,3% a/a, pior agosto da série); jan-ago 25,32 Mt (-13,9%) pagando 16,9% mais caro na média (US$ 393/t).",
+      "source_url": "https://farmnews.com.br/mercado/importacao-de-fertilizante-pelo-brasil-cai-forte-em-agosto-de-2026/"
+    },
+    {
+      "date": "2026-09-10",
+      "fact": "IPCF (Mosaic) cai 7% em agosto para 1,26: soja +5% e milho +4% no mês, com fertilizantes em baixa, devolveram poder de compra ao produtor.",
+      "source_url": "https://www.piranot.com.br/2026/09/10/noticias/economia/ipcf-cai-7-agosto-melhora-poder-compra-fertilizantes/"
+    },
+    {
+      "date": "2026-09-09",
+      "fact": "Ureia recuou 12,5% em agosto (R$ 2.456 -> R$ 2.148/t no porto) e MAP ficou em R$ 4.350/t; ~90% da adubação da soja 26/27 já comprada; soja 26/27 em MT subiu ~10% em 30 dias (Itaú BBA).",
+      "source_url": "https://nx1.com.br/2026/09/09/soja-mais-cara-devolve-folego-a-compra-de-fertilizantes/"
+    },
+    {
+      "date": "2026-09-03",
+      "fact": "Rabobank corta projeção de entregas de fertilizantes no Brasil em 2026 para 45,1 Mt (-8,1% vs recorde de 49,1 Mt em 2025); crédito caro e preços altos.",
+      "source_url": "https://afnews.com.br/demanda-por-fertilizantes-no-brasil-pode-cair-8-em-2026-com-credito-apertado-e-precos-elevados/"
+    },
+    {
+      "date": "2026-08-28",
+      "fact": "CFR Brasil no fim de agosto: ureia US$ 480-500/t (+80-90 em julho, Índia + Oriente Médio), MAP US$ 850-870/t em queda, KCl US$ 385-400/t estável (Biond Agro).",
+      "source_url": "https://opresenterural.com.br/ureia-dispara-fosforo-recua-e-produtor-enfrenta-dilema-na-compra-de-fertilizantes/"
+    },
+    {
+      "date": "2026-08-12",
+      "fact": "Ataque a Novorossiysk paralisa terminais de grãos; exportação de fertilizantes russos pelo Mar Negro 'efetivamente parada' após a escalada (CSIS, 11/09).",
+      "source_url": "https://www.csis.org/analysis/how-do-latest-black-sea-attacks-affect-global-food-security"
+    }
+  ],
+  "rates": {
+    "selic": 13.75,
+    "cdi": 13.65,
+    "cdi_date": "2026-09-17",
+    "cdi_previous": 13.90,
+    "cdi_previous_date": "2026-09-16",
+    "custeio_controlado": 12.5,
+    "custeio_pronamp": 9.0,
+    "livre_pj": 23.55,
+    "as_of": "2026-09-16",
+    "source": "BCB/Copom 16/09/2026; Plano Safra 2026/27 (30/06/2026); BCB séries jul/2026",
+    "verified": false,
+    "verification_note": "18/09: Selic meta 13,75 confirmada (BCB SGS série 432); CDI confirmado na SGS série 4389 — 13,90 em 16/09 (valor original) e 13,65 em 17/09 (atualizado aqui). custeio_controlado, custeio_pronamp e livre_pj NÃO foram reconfirmados (copiados da etapa anterior).",
+    "verification_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.4389/dados/ultimos/3?formato=json"
+  },
+  "verification": {
+    "date": "2026-09-18",
+    "method": "Fontes citadas reabertas por fetch em 18/09/2026; IMF PortWatch consultado direto no FeatureServer ArcGIS; BCB via API SGS; nenhum valor inventado.",
+    "confirmed": [
+      "hormuz: straits.live (18/09 12:30Z) — fechado, dia 201, 8 trânsitos em 13/09, baseline 85/dia, seguro 40x, Brent 103,67; PortWatch FeatureServer: n_total 13/09 = 8, média 2025 = 85,5/dia",
+      "ureia CFR 480-500, MAP 850-870, KCl 385-400 US$/t (28/08): O Presente Rural / Biond Agro — batem, inclusive +80-90 em julho e 95% do potássio comprado",
+      "ureia futuro CME CFR Brazil 472,50 (17/09, dados em atraso): Investing.com — bate",
+      "relação de troca MT 25,1 vs 20,57 sc/t: BRA1 16/09 (MacroSector) — bate; matéria não diz qual fertilizante",
+      "soja CEPEA/ESALQ PR 154,95 (17/09) e histórico 11-17/09: Notícias Agrícolas — batem",
+      "importações jan-ago 25,32 Mt (-13,9%), ago 2,96 Mt (-43,3%), US$ 393,2/t (+16,9%), ago US$ 403,8/t: FarmNews 11/09 — batem; ureia ago 508,7 mil t, jan-ago 2,82 Mt, US$ 455,5/t (+20,5%): FarmNews 15/09 — batem; KCl ago 0,93 Mt (-37,7%), jan-ago 9,76 vs 10,12 Mt, US$ 352,1/t: FarmNews 15/09 — batem",
+      "cruzamento com data.json (Comex Stat por SH4, ago/2026): 3102+3103+3104+3105 = 2,97 Mt, coerente com os 2,96 Mt da FarmNews; 3102 = 1.151 kt (ureia 508,7 kt é subconjunto); 3104 = 974 kt (KCl 0,93 Mt é subconjunto)",
+      "IPCF 1,26 em ago (jul 1,35; -7%; cana +8, soja +5, milho +4): Piranot 10/09 — bate",
+      "barter Itaú BBA 2026 vs 2025 (ureia 35-40/28-32, MAP 30-35/25-30, KCl 20-25/18-22) e KCl US$ 400-405: Agrolink 29/08 — bate",
+      "NX1 09/09: ureia -12,5% (R$ 2.456 -> 2.148/t), MAP R$ 4.350/t, picos março MAP 39 / ureia 32 sc/t (vs 25 / 17), ~90% comprado, jan-jul 22,39 Mt (-7%) — batem",
+      "Selic 13,75: BCB SGS 432 — bate"
+    ],
+    "changed": [
+      "rates.cdi: 13,90 (16/09) -> 13,65 (17/09), fonte SGS 4389; rates.verified = false porque as taxas de custeio e livre PJ não foram reconfirmadas",
+      "hormuz.notes / hormuz.portwatch_direct: cross-check direto no FeatureServer"
+    ],
+    "not_reverified": [
+      "red_sea (Al Jazeera/NPR), black_sea (CSIS), Scot Consultoria (fev/2026), Grão Direto, Sou Agro/IMEA, AF News/Rabobank, Economic News Brasil, AgFeed, Conecta Agro — não reabertos nesta rodada; mantido o verified da etapa anterior",
+      "rates.custeio_controlado, rates.custeio_pronamp, rates.livre_pj"
+    ]
+  },
+  "sources": [
+    {"id": "straits_live", "url": "https://straits.live/", "accessed": "2026-09-18", "license": "Agregador público; citar 'straits.live' e as fontes primárias (IMF PortWatch, UKMTO). Não redistribuir a página."},
+    {"id": "aljazeera_redsea", "url": "https://www.aljazeera.com/news/2026/9/11/houthis-take-control-of-yemens-red-sea-coast-key-shipping-route", "accessed": "2026-09-18", "license": "Conteúdo jornalístico: citar título/fato com link; não reproduzir texto integral."},
+    {"id": "csis_blacksea", "url": "https://www.csis.org/analysis/how-do-latest-black-sea-attacks-affect-global-food-security", "accessed": "2026-09-18", "license": "CSIS: citação com atribuição."},
+    {"id": "opresenterural_biond", "url": "https://opresenterural.com.br/ureia-dispara-fosforo-recua-e-produtor-enfrenta-dilema-na-compra-de-fertilizantes/", "accessed": "2026-09-18", "license": "Conteúdo jornalístico (análise Biond Agro): citar número com atribuição e link."},
+    {"id": "investing_urea_cme", "url": "https://br.investing.com/indices/urea-granular-cfr-brazil-futures", "accessed": "2026-09-18", "license": "Cotação atrasada de índice CME; uso informativo com atribuição; não é dado licenciado para redistribuição."},
+    {"id": "agrolink_itau", "url": "https://www.agrolink.com.br/noticias/relacao-de-troca-2026--quantas-sacas-de-soja-pagam-1-tonelada-de-ureia_518336.html", "accessed": "2026-09-18", "license": "Conteúdo jornalístico (dados Itaú BBA): citar com atribuição."},
+    {"id": "nx1_itau", "url": "https://nx1.com.br/2026/09/09/soja-mais-cara-devolve-folego-a-compra-de-fertilizantes/", "accessed": "2026-09-18", "license": "Conteúdo jornalístico (dados Itaú BBA/Agrinvest/CNA): citar com atribuição."},
+    {"id": "bra1_macrosector", "url": "https://www.bra1.com.br/economia/id-693370/produtores_de_graos_percam_poder_de_compra_em_2026__soja_resiste__mas_fertilizantes_encarecem", "accessed": "2026-09-18", "license": "Conteúdo jornalístico (dados MacroSector): citar com atribuição."},
+    {"id": "scot_carta", "url": "https://www.scotconsultoria.com.br/noticias/cartas/60168/carta-insumos-relacao-de-troca-soja-x-fertilizantes.htm", "accessed": "2026-09-18", "license": "Scot Consultoria: carta pública; citar 'Scot Consultoria' com link."},
+    {"id": "piranot_ipcf", "url": "https://www.piranot.com.br/2026/09/10/noticias/economia/ipcf-cai-7-agosto-melhora-poder-compra-fertilizantes/", "accessed": "2026-09-18", "license": "Índice da Mosaic divulgado publicamente; citar 'Mosaic Fertilizantes (IPCF)'."},
+    {"id": "na_cepea_pr", "url": "https://www.noticiasagricolas.com.br/cotacoes/soja/indicador-cepea-esalq-soja-parana", "accessed": "2026-09-18", "license": "Indicador CEPEA/ESALQ republicado; citar 'CEPEA/ESALQ' (uso por citação; CEPEA exige atribuição)."},
+    {"id": "na_soja", "url": "https://www.noticiasagricolas.com.br/cotacoes/soja", "accessed": "2026-09-18", "license": "Cotações republicadas (mercado físico e B3); uso por citação com atribuição."},
+    {"id": "graodireto_sorriso", "url": "https://www.graodireto.com.br/ofertas/soja/mt/sorriso/", "accessed": "2026-09-18", "license": "Ofertas públicas de compra (Grão Direto); citar com link; valores mudam diariamente."},
+    {"id": "graodireto_cascavel", "url": "https://www.graodireto.com.br/ofertas/soja/pr/cascavel/", "accessed": "2026-09-18", "license": "Idem."},
+    {"id": "graodireto_rioverde", "url": "https://www.graodireto.com.br/ofertas/soja/go/rio-verde/", "accessed": "2026-09-18", "license": "Idem."},
+    {"id": "souagro_imea", "url": "https://souagro.net/noticia/2026/09/preco-reage-e-produtor-acelera-venda-de-soja-algodao-e-milho/", "accessed": "2026-09-18", "license": "Conteúdo jornalístico (dados IMEA): citar 'IMEA' com atribuição."},
+    {"id": "farmnews_imp_total", "url": "https://farmnews.com.br/mercado/importacao-de-fertilizante-pelo-brasil-cai-forte-em-agosto-de-2026/", "accessed": "2026-09-18", "license": "FarmNews (dados Comex Stat, dados abertos): citar 'Comex Stat via FarmNews'."},
+    {"id": "farmnews_imp_ureia", "url": "https://farmnews.com.br/mercado/importacao-de-ureia-pelo-brasil-volta-a-cair-e-segue-descolado-dos-anos-anteriores/", "accessed": "2026-09-18", "license": "Idem."},
+    {"id": "farmnews_imp_kcl", "url": "https://farmnews.com.br/mercado/importacao-de-cloreto-de-potassio-pelo-brasil-volta-a-cair-forte-em-agosto/", "accessed": "2026-09-18", "license": "Idem."},
+    {"id": "afnews_rabobank", "url": "https://afnews.com.br/demanda-por-fertilizantes-no-brasil-pode-cair-8-em-2026-com-credito-apertado-e-precos-elevados/", "accessed": "2026-09-18", "license": "Conteúdo jornalístico (dados RaboResearch): citar com atribuição."},
+    {"id": "bcb_ptax", "url": "https://www.bcb.gov.br/estabilidadefinanceira/historicocotacoes", "accessed": "2026-09-18", "license": "Dados abertos (BCB) — via data.json do pipeline."}
+  ]
+}
