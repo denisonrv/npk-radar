@@ -1,5 +1,5 @@
-// NPK Radar service worker — shell cache-first, data network-first. Build: 202610160716
-const SHELL = 'npk-shell-202610160716';
+// NPK Radar service worker — shell cache-first, data network-first. Build: 202610170702
+const SHELL = 'npk-shell-202610170702';
 const PRECACHE = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-180.png'];
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(SHELL).then((c) => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
